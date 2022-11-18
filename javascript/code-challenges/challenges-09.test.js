@@ -157,7 +157,7 @@ const hasChildrenValues = (arr, character) => {
     }
   }
   return result;
-
+//I had no idea how to do this and im gonna be honest.
 };
 
 /* ------------------------------------------------------------------------------------------------
