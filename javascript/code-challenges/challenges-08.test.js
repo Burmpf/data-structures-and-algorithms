@@ -117,12 +117,12 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
+  // Solution code here...
   let arr = str.split(' ').map(str => str.replace(/\W/g, ''));
   return arr.filter(word => {
     return /\b[A-Z]/g.test(word);
   });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
