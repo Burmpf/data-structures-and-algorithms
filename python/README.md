@@ -78,3 +78,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 ## Table of Contents
 
 * [Reverse Array](docs/array_reverse/README.md)
+* [Array Insert Shift](docs/array_insert_shift/README.md)
