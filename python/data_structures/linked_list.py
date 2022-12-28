@@ -5,16 +5,16 @@ class Node:
 
 
 class LinkedList:
-
     def __init__(self):
         self.head = None
+        self.next = None
 
     def __str__(self):
-        stringval = self.head
+        current = self.head
         string_values = ""
-        while stringval is not None:
-            string_values += f"{ {stringval.value} } -> "
-            stringval = stringval.next
+        while current is not None:
+            string_values += f"{{ {str(current.value)} }} -> "
+            current = current.next
         string_values += "NULL"
         return string_values
 
@@ -31,5 +31,41 @@ class LinkedList:
             current = current.next
         return False
 
-    class TargetError:
-        pass
+    def append(self, value):
+        current = self.head
+        while current.next is not None:
+            current = current.next
+        current.next = Node(value)
+
+    def insert_before(self, before, value):
+        current = self.head
+        previous = None
+        if current is None:
+            raise TargetError
+        while current.value is not before:
+            previous = current
+            current = current.next
+            if current is None:
+                raise TargetError
+        new_node = Node(value)
+        new_node.next = current
+        if previous is not None:
+            previous.next = new_node
+        if previous is None:
+            self.head = new_node
+
+    def insert_after(self, after, value):
+        current = self.head
+        if current is None:
+            raise TargetError
+        while current.value is not after:
+            current = current.next
+            if current is None:
+                raise TargetError
+        new_node = Node(value)
+        new_node.next = current.next
+        current.next = new_node
+
+
+class TargetError(Exception):
+    pass
