@@ -8,6 +8,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.next = None
+        self.count = 0
 
     def __str__(self):
         current = self.head
@@ -22,6 +23,7 @@ class LinkedList:
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
+        self.count += 1
 
     def includes(self, value):
         current = self.head
@@ -40,31 +42,29 @@ class LinkedList:
     def insert_before(self, before, value):
         current = self.head
         previous = None
-        if current is None:
-            raise TargetError
-        while current.value is not before:
-            previous = current
-            current = current.next
-            if current is None:
-                raise TargetError
-        new_node = Node(value)
-        new_node.next = current
-        if previous is not None:
-            previous.next = new_node
-        if previous is None:
-            self.head = new_node
+        try:
+            while current.value is not before:
+                previous = current
+                current = current.next
+            new_node = Node(value)
+            new_node.next = current
+            if previous is not None:
+                previous.next = new_node
+            if previous is None:
+                self.head = new_node
+        except Exception as e:
+            raise TargetError(e)
 
     def insert_after(self, after, value):
         current = self.head
-        if current is None:
-            raise TargetError
-        while current.value is not after:
-            current = current.next
-            if current is None:
-                raise TargetError
-        new_node = Node(value)
-        new_node.next = current.next
-        current.next = new_node
+        try:
+            while current.value is not after:
+                current = current.next
+            new_node = Node(value)
+            new_node.next = current.next
+            current.next = new_node
+        except Exception as e:
+            raise TargetError(e)
 
     def kth_from_end(self, value):
         current = self.head
@@ -72,8 +72,8 @@ class LinkedList:
         while current is not None:
             current = current.next
             length += 1
-            if value >= length:
-                raise TargetError(Exception)
+        if value >= length:
+            raise TargetError(Exception)
         if value < 0:
             raise TargetError(Exception)
         current = self.head
@@ -84,4 +84,5 @@ class LinkedList:
 
 
 class TargetError(Exception):
+    print("searching for value that doesnt exist")
     pass
