@@ -1,7 +1,7 @@
 from python.data_structures.invalid_operation_error import InvalidOperationError
 
-class Node:
-    
+class Node: 
+
     def __init__(self, value=None, nextval=None):
         self.value = value
         self.next = nextval

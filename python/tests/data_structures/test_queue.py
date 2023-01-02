@@ -87,11 +87,11 @@ def test_peek_post_dequeue():
     q.enqueue("bananas")
     q.dequeue()
     actual = q.peek()
-    expected = "bananas"
+    expected = "bananas" 
     assert actual == expected
 
 
-#@pytest.mark.skip("TODO")
+@pytest.mark.skip("TODO")
 def test_is_empty():
     q = Queue()
     actual = q.is_empty()

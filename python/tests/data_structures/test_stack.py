@@ -73,7 +73,7 @@ def test_peek():
     s.push("banana")
     actual = s.peek()
     expected = "banana"
-    assert actual == expected
+    assert actual == expected 
 
 
 #@pytest.mark.skip("TODO")
