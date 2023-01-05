@@ -1,4 +1,4 @@
-from python.data_structures.invalid_operation_error import InvalidOperationError
+from data_structures.invalid_operation_error import InvalidOperationError
 
 
 class Node: 
