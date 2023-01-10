@@ -72,7 +72,7 @@ def test_not_contains(tree):
     assert actual == expected
 
 
-#@pytest.fixture
+@pytest.fixture
 def tree():
     tree = BinarySearchTree()
     tree.add(10)
