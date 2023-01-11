@@ -47,6 +47,7 @@ def test_four_nodes():
     assert actual == expected
 
 
+
 #@pytest.mark.skip("TODO")
 def test_example_from_reading():
     """
