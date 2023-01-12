@@ -1,6 +1,6 @@
 import pytest
-from python.code_challenges.tree_fizz_buzz import fizz_buzz_tree
-from python.data_structures.kary_tree import KaryTree, Node
+from code_challenges.tree_fizz_buzz import fizz_buzz_tree
+from data_structures.kary_tree import KaryTree, Node
 
 
 #@pytest.mark.skip("TODO")
